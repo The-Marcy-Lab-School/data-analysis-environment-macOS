@@ -1,0 +1,15 @@
+name: data-analysis-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9 # or 3.10, or 3.11
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - statsmodels
+  - jupyter
+  - ipykernel
+  - plotly
+  - notebook
