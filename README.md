@@ -29,42 +29,40 @@ This guide will walk you through setting up a Python environment for data analys
         ```
 
     * This command will create a Conda environment named `data-analysis-env` (as specified in your `environment.yaml`) and install all the packages listed in the file.
+    * Activate the environment if prompted in the terminal by typing
+         ```bash
+         conda activate data-analysys-env
+         ```
 
-3.  **Open the Project in VS Code:**
+3.  **Open the Repository Folder  in VS Code:**
 
-    * Open VS Code and navigate to the directory containing the repository that you cloned down you should be INSIDE the repository (using "File" -> "Open Folder...".
+    * Open VS Code and navigate to the directory containing the repository that you cloned down you should be INSIDE the repository (using "File" -> "Open Folder..." OR **Cmd + O** on your keyboard)
+      
+  
+4.  **Install the Python and Jupyter Extensions:**
 
-4.  **Select the Conda Environment in VS Code:**
+    * In VS Code, go to the Extensions view by clicking the Extensions icon in the Activity Bar (click the gear icon on the left>then extensions).
+    * Search for "Python" and install the Microsoft Python extension.
+    * Search for "Jupyter" and install the Microsoft Jupyter extension.
+    * These extensions provide essential features for Python development and Jupyter Notebook support in VS Code.
+
+5.  **Select the Conda Environment in VS Code:**
 
     * Open the Command Palette in VS Code by pressing `Cmd + Shift + P`.
     * Type "Python: Select Interpreter" and press Enter.
     * VS Code should detect the `data-analysis-env` environment. Select it from the list. If it doesn't appear, you may need to restart VS Code.
 
-5.  **Install the Python and Jupyter Extensions:**
-
-    * In VS Code, go to the Extensions view by clicking the Extensions icon in the Activity Bar (the square icon on the left side of the VS Code window).
-    
-    * Search for "Python" and install the Microsoft Python extension.
-    * Search for "Jupyter" and install the Microsoft Jupyter extension.
-    * These extensions provide essential features for Python development and Jupyter Notebook support in VS Code.
 
 6.  **Verify the Environment:**
 
-    * Create a new Python file (e.g., `test.py`) or a Jupyter Notebook file (`.ipynb`).
-    * In the Python file, add a simple print statement:
+    * Create a new Python Jupyter Notebook file (`test.ipynb`).
+    * In the notebook file, add a code block, and type the print statement below:
 
         ```python
         print("Python environment setup successful!")
         ```
+    * Run the code block by pressing the play button.  If it prompts you at the top to select enviornment click `data-analysis-env`
 
-    * Run the Python file by right-clicking in the editor and selecting "Run Python File in Terminal".
-    * In a Jupyter Notebook, run a simple cell to verify the environment is working.
-
-7.  **Using the Jupyter Notebook:**
-
-    * If you created a `*.ipynb` file, VS Code should automatically use the Jupyter extension to render it.
-    * Make sure that the correct kernel is selected in the top right corner of the notebook. The kernel should correspond to your `data-analysis-env` environment. If not, select it from the kernel dropdown.
-    * Run a simple python cell to verify that the environment is working.
 
 ## Troubleshooting
 
