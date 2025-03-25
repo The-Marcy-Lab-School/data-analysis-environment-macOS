@@ -11,7 +11,7 @@ This guide will walk you through setting up a Python environment for data analys
 
 1.  **Clone this Repository:**
 
-    * Clone this repository to your local machine. Replace `<repository_url>` with your repository's URL and navigate inside the repo.
+    * Clone this repository to your local machine. Replace `<repository_url>` with your repository's URL and navigate inside the repo.  Type each line one at a time aka press Enter/Return after the git clone line then type the next line.  
 
         ```bash
         git clone <repository_url>
@@ -46,16 +46,11 @@ This guide will walk you through setting up a Python environment for data analys
     * Search for "Jupyter" and install the Microsoft Jupyter extension.
     * These extensions provide essential features for Python development and Jupyter Notebook support in VS Code.
 
-5.  **Select the Conda Environment in VS Code:**
-
-    * Open the Command Palette in VS Code by pressing `Cmd + Shift + P`.
-    * Type "Python: Select Interpreter" and press Enter.
-    * VS Code should detect the `data-analysis-env` environment. Select it from the list. If it doesn't appear, you may need to restart VS Code.
 
 
-6.  **Verify the Environment:**
+5.  **Verify the Environment:**
 
-    * Create a new Python Jupyter Notebook file (`test.ipynb`).
+    * Create a new Python Jupyter Notebook file (`test.ipynb`) in the repo's folder. Click on the folder on the left-hand side > Paper icon with the plus symbol > type `test.ipynb`. 
     * In the notebook file, add a code block, and type the print statement below:
 
         ```python
