@@ -31,7 +31,7 @@ This guide will walk you through setting up a Python environment for data analys
     * This command will create a Conda environment named `data-analysis-env` (as specified in your `environment.yaml`) and install all the packages listed in the file.
     * Activate the environment if prompted in the terminal by typing
          ```bash
-         conda activate data-analysys-env
+         conda activate data-analysis-env
          ```
 
 3.  **Open the Repository Folder  in VS Code:**
