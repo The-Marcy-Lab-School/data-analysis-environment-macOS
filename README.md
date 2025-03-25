@@ -50,7 +50,7 @@ This guide will walk you through setting up a Python environment for data analys
 
 5.  **Verify the Environment:**
 
-    * Create a new Python Jupyter Notebook file (`test.ipynb`) in the repo's folder. Click on the folder on the left-hand side > Paper icon with the plus symbol > type `test.ipynb`. 
+    * Create a new Python Jupyter Notebook file (`test.ipynb`) in the repo's folder. Click on the repo's folder on the left-hand side > Paper icon with the plus symbol > type `test.ipynb`. 
     * In the notebook file, add a code block, and type the print statement below:
 
         ```python
