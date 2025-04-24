@@ -50,13 +50,14 @@ This guide will walk you through setting up a Python environment for data analys
 
 5.  **Verify the Environment:**
 
-    * Create a new Python Jupyter Notebook file (`test.ipynb`) in the repo's folder. Click on the repo's folder on the left-hand side > Paper icon with the plus symbol > type `test.ipynb`. 
-    * In the notebook file, add a code block, and type the print statement below:
+    * In Vscode, create a new Python Jupyter Notebook file (`test.ipynb`) in the repo's folder. Click on the repo's folder on the left-hand side > Paper icon with the plus symbol > type `test.ipynb`. 
+      To check if you have the jupyter extension, use keys command+shift+p and type 'Python: Install the Jupyter extension'
+     * In the notebook file, add a code block, and type the print statement below:
 
         ```python
         print("Python environment setup successful!")
         ```
-    * Run the code block by pressing the play button.  If it prompts you at the top to select enviornment click `data-analysis-env`
+    * Run the code block by pressing the play button.  If it prompts you at the top to select environment click `data-analysis-env`
 
 
 ## Troubleshooting
