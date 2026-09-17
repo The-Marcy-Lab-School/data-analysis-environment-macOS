@@ -1,67 +1,229 @@
-# Setting Up a Python Environment for Data Analysis on macOS with VS Code
+# Data Analysis Environment Setup — macOS
 
-This guide will walk you through setting up a Python environment for data analysis on macOS using VS Code. We'll utilize a provided `environment.yaml` file to create a Conda environment, and ensure you have the necessary VS Code extensions installed.
+This guide will help you set up the development environment you will use throughout the **Marcy Lab School Data Analytics Fellowship**.
 
-## Prerequisites
+No prior experience setting up a Python development environment is required. Follow the steps **in order**, and do not skip the verification steps.
 
-* **VS Code:** Ensure you have VS Code installed on your macOS system. If not, download and install it from [https://code.visualstudio.com/](https://code.visualstudio.com/).
-* **Anaconda or Miniconda (Recommended):** Conda is a package and environment manager that simplifies the process of creating and managing Python environments. If you don't have it, we recommend installing Miniconda (a minimal installer) from [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html). Follow the macOS installation instructions.
+## What You Will Set Up
 
-## Steps
+By the end of this guide, your Mac will have:
 
-1.  **Clone this Repository:**
+* **Git** — used to download and manage code
+* **Miniconda** — used to manage Python and Python environments
+* **Python 3.13**
+* **VS Code** — the code editor we will use
+* **Jupyter** — used to run Python notebooks
+* Common data analysis libraries such as:
 
-    * Clone this repository to your local machine. Replace `<repository_url>` with your repository's URL and navigate inside the repo.  Type each line one at a time aka press Enter/Return after the git clone line then type the next line.  
+  * pandas
+  * NumPy
+  * Matplotlib
+  * Seaborn
+  * scikit-learn
+  * statsmodels
+  * Plotly
 
-        ```bash
-        git clone <repository_url>
-        cd <repository_directory>
-        ```
+---
 
+## Before You Start
 
+You will use the **Terminal** several times during setup.
 
-2.  **Create the Conda Environment:**
+The Terminal lets you give your computer commands using text instead of clicking through menus.
 
-    * Use the `conda env create` command with the `environment.yaml` file to create the environment.
+### Open Terminal
 
-        ```bash
-        conda env create -f environment.yaml
-        ```
+1. Press **Command + Space** to open Spotlight Search.
+2. Type:
 
-    * This command will create a Conda environment named `data-analysis-env` (as specified in your `environment.yaml`) and install all the packages listed in the file.
-    * Activate the environment if prompted in the terminal by typing
-         ```bash
-         conda activate data-analysis-env
-         ```
+```text
+Terminal
+```
 
-3.  **Open the Repository Folder  in VS Code:**
+3. Press **Enter**.
 
-    * Open VS Code and navigate to the directory containing the repository that you cloned down you should be INSIDE the repository (using "File" -> "Open Folder..." OR **Cmd + O** on your keyboard)
-      
-  
-4.  **Install the Python and Jupyter Extensions:**
+You should see a window containing a command prompt.
 
-    * In VS Code, go to the Extensions view by clicking the Extensions icon in the Activity Bar (click the gear icon on the left>then extensions).
-    * Search for "Python" and install the Microsoft Python extension.
-    * Search for "Jupyter" and install the Microsoft Jupyter extension.
-    * These extensions provide essential features for Python development and Jupyter Notebook support in VS Code.
+> **Important:** Only type the commands shown inside the code blocks. You do not need to type the `$` symbol if you see it in another tutorial.
 
+---
 
+## Step 1: Check Git
 
-5.  **Verify the Environment:**
+Git is used to download this repository and will be used throughout the fellowship.
 
-    * Create a new Python Jupyter Notebook file (`test.ipynb`) in the repo's folder. Click on the repo's folder on the left-hand side > Paper icon with the plus symbol > type `test.ipynb`. 
-    * In the notebook file, add a code block, and type the print statement below:
+In Terminal, run:
 
-        ```python
-        print("Python environment setup successful!")
-        ```
-    * Run the code block by pressing the play button.  If it prompts you at the top to select enviornment click `data-analysis-env`
+```bash
+git --version
+```
 
+### If Git Is Installed
 
-## Troubleshooting
+You should see something similar to:
 
-* **Environment Not Found:** If VS Code doesn't detect the `data-analysis-env` environment, ensure that Conda is correctly installed and that the environment was created successfully. You might need to restart VS Code.
-* **Package Installation Issues:** If you encounter issues during the `conda env create` step, check your internet connection and ensure that the `environment.yaml` file is correctly formatted.
-* **Kernel Issues:** if the jupyter notebook kernel is not correct, select the correct kernel from the dropdown in the upper right hand corner of the notebook.
-* **Conda not found:** If conda commands are not found, make sure that the conda install location is in your PATH environment variable.
+```text
+git version 2.x.x
+```
+
+Your exact version may be different.
+
+Continue to **Step 2**.
+
+### If Git Is Not Installed
+
+Your Mac may prompt you to install the **Command Line Developer Tools**.
+
+Follow the installation prompts.
+
+After installation finishes, close and reopen Terminal and run:
+
+```bash
+git --version
+```
+
+again.
+
+Do not continue until this command returns a Git version.
+
+---
+
+## Step 2: Install Miniconda
+
+### What Is Miniconda?
+
+Python projects often need different versions of Python and different packages.
+
+**Conda** helps us manage these environments.
+
+Think of a Conda environment as a separate workspace containing the exact Python version and packages needed for a project.
+
+We will use **Miniconda**, which provides Conda without installing a large number of extra packages that we do not need.
+
+### Download Miniconda
+
+Go to the official Miniconda installation page:
+
+https://www.anaconda.com/docs/getting-started/miniconda/install
+
+Choose the installer for **macOS**.
+
+Your Mac will normally use one of two processor types:
+
+* **Apple Silicon** — M1, M2, M3, M4, M5, etc.
+* **Intel** — older Macs
+
+### Not Sure Which Mac You Have?
+
+1. Click the **Apple menu** in the top-left corner.
+2. Select **About This Mac**.
+3. Look for **Chip** or **Processor**.
+
+If you see something such as:
+
+```text
+Apple M3
+```
+
+you have an **Apple Silicon Mac**.
+
+If you see:
+
+```text
+Intel
+```
+
+you have an **Intel Mac**.
+
+Download the appropriate Miniconda installer and follow the installation instructions.
+
+---
+
+## Step 3: Verify Conda
+
+After installing Miniconda, **close Terminal completely and reopen it**.
+
+Then run:
+
+```bash
+conda --version
+```
+
+You should see something similar to:
+
+```text
+conda 25.x.x
+```
+
+Your version may be different.
+
+If you see a Conda version, continue.
+
+### If You See `conda: command not found`
+
+First:
+
+1. Close Terminal.
+2. Reopen Terminal.
+3. Run:
+
+```bash
+conda --version
+```
+
+again.
+
+If Conda still cannot be found, return to the Miniconda installation instructions and verify that installation completed successfully.
+
+---
+
+## Step 4: Clone This Repository
+
+### What Does "Clone" Mean?
+
+Cloning creates a copy of a GitHub repository on your computer.
+
+In Terminal, run:
+
+```bash
+git clone https://github.com/The-Marcy-Lab-School/data-analysis-environment-macOS.git
+```
+
+Then move into the new folder:
+
+```bash
+cd data-analysis-environment-macOS
+```
+
+### Verify That You Are in the Correct Folder
+
+Run:
+
+```bash
+pwd
+```
+
+The path should end with:
+
+```text
+data-analysis-environment-macOS
+```
+
+You can also run:
+
+```bash
+ls
+```
+
+You should see files including:
+
+```text
+README.md
+environment.yaml
+```
+
+---
+
+## Step 5: Create Your Data Analysis Environment
+
+This repo
