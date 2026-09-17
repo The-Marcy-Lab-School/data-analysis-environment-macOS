@@ -226,4 +226,619 @@ environment.yaml
 
 ## Step 5: Create Your Data Analysis Environment
 
-This repo
+This repository contains a file called:
+
+```text
+environment.yaml
+```
+
+This file tells Conda which version of Python and which packages to install.
+
+Run:
+
+```bash
+conda env create -f environment.yaml
+```
+
+Conda will begin downloading and installing Python and the required packages.
+
+This may take several minutes.
+
+> **Important:** Do not close Terminal while the environment is being created.
+
+---
+
+## Step 6: Activate the Environment
+
+After installation finishes, activate the environment:
+
+```bash
+conda activate data-analysis-env
+```
+
+Your Terminal prompt should now include:
+
+```text
+(data-analysis-env)
+```
+
+For example:
+
+```text
+(data-analysis-env) yourname@MacBook %
+```
+
+This tells you that the environment is active.
+
+---
+
+## Step 7: Verify Python
+
+Run:
+
+```bash
+python --version
+```
+
+You should see:
+
+```text
+Python 3.13.x
+```
+
+The final number may be different depending on the latest compatible Python 3.13 release.
+
+For example:
+
+```text
+Python 3.13.7
+```
+
+### If You Do Not See Python 3.13
+
+Stop here.
+
+Make sure your environment is active:
+
+```bash
+conda activate data-analysis-env
+```
+
+Then check again:
+
+```bash
+python --version
+```
+
+---
+
+## Step 8: Verify Your Conda Environment
+
+Run:
+
+```bash
+conda env list
+```
+
+You should see `data-analysis-env` in the list.
+
+The active environment will have an `*` next to it.
+
+For example:
+
+```text
+base
+data-analysis-env    *
+```
+
+---
+
+## Step 9: Install VS Code
+
+### What Is VS Code?
+
+**Visual Studio Code (VS Code)** is the code editor we will use throughout the fellowship.
+
+Download VS Code from:
+
+https://code.visualstudio.com/
+
+Install the macOS version.
+
+After installation, open **Visual Studio Code**.
+
+---
+
+## Step 10: Install the Required VS Code Extensions
+
+In VS Code:
+
+1. Click the **Extensions** icon on the left side of the window.
+2. Search for:
+
+```text
+Python
+```
+
+3. Install the **Python extension published by Microsoft**.
+4. Search for:
+
+```text
+Jupyter
+```
+
+5. Install the **Jupyter extension published by Microsoft**.
+
+These extensions allow VS Code to work with Python files and Jupyter notebooks.
+
+---
+
+## Step 11: Open the Repository in VS Code
+
+You can open the repository directly from Terminal.
+
+First, make sure you are inside the repository:
+
+```bash
+cd data-analysis-environment-macOS
+```
+
+Make sure your environment is active:
+
+```bash
+conda activate data-analysis-env
+```
+
+Then run:
+
+```bash
+code .
+```
+
+The `.` means:
+
+> Open the folder I am currently inside.
+
+### If `code .` Does Not Work
+
+Open VS Code manually.
+
+Then select:
+
+**File → Open Folder**
+
+Find and select:
+
+```text
+data-analysis-environment-macOS
+```
+
+---
+
+## Step 12: Select Your Python Interpreter
+
+VS Code needs to know which Python installation it should use.
+
+We want it to use the Python installation inside:
+
+```text
+data-analysis-env
+```
+
+In VS Code:
+
+1. Press **Command + Shift + P**.
+2. Search for:
+
+```text
+Python: Select Interpreter
+```
+
+3. Select the interpreter associated with:
+
+```text
+data-analysis-env
+```
+
+It should indicate that it is using **Python 3.13**.
+
+> **Important:** Do not select `base` if `data-analysis-env` is available.
+
+---
+
+
+# Setup Complete
+
+You now have the core development environment needed for the Data Analytics Fellowship.
+
+You have successfully set up:
+
+* Git
+* Miniconda
+* Python 3.13
+* `data-analysis-env`
+* VS Code
+* Python VS Code extension
+* Jupyter VS Code extension
+* Core Python data analysis packages
+* Jupyter notebooks
+
+---
+
+# A Common Production Workflow
+
+**Setup only happens once.**
+
+You do **not** need to reinstall everything every time you want to write Python.
+
+When you return to your work on another day, your workflow will usually look something like this.
+
+## 1. Open Terminal
+
+Open Terminal using Spotlight:
+
+**Command + Space → Terminal**
+
+## 2. Navigate to Your Project
+
+Use `cd` to move into the folder containing your project.
+
+For example:
+
+```bash
+cd path/to/your/project
+```
+
+Your actual path will depend on where your project is stored.
+
+## 3. Activate Your Environment
+
+Run:
+
+```bash
+conda activate data-analysis-env
+```
+
+Look for:
+
+```text
+(data-analysis-env)
+```
+
+at the beginning of your Terminal prompt.
+
+## 4. Open VS Code
+
+From your project folder, run:
+
+```bash
+code .
+```
+
+## 5. Work on Your Project
+
+You can now work with:
+
+* `.py` Python files
+* `.ipynb` Jupyter notebooks
+* Git
+* GitHub
+* your installed data analysis libraries
+
+## 6. When You Are Finished
+
+You can deactivate the environment:
+
+```bash
+conda deactivate
+```
+
+---
+
+# Troubleshooting
+
+Environment setup problems are normal.
+
+Read the error message carefully before changing or reinstalling anything.
+
+## Problem: `conda: command not found`
+
+Try closing Terminal completely and reopening it.
+
+Then run:
+
+```bash
+conda --version
+```
+
+If Conda still cannot be found, verify that Miniconda was installed successfully.
+
+---
+
+## Problem: `git: command not found`
+
+Run:
+
+```bash
+git --version
+```
+
+macOS may prompt you to install the Command Line Developer Tools.
+
+Complete the installation and try again.
+
+---
+
+## Problem: My Terminal Says `(base)`
+
+You may see:
+
+```text
+(base)
+```
+
+at the beginning of your Terminal prompt.
+
+This means Conda is installed, but you are currently using Conda's default environment.
+
+Activate the fellowship environment:
+
+```bash
+conda activate data-analysis-env
+```
+
+Your prompt should change to:
+
+```text
+(data-analysis-env)
+```
+
+---
+
+## Problem: I Am Using the Wrong Python Version
+
+First check:
+
+```bash
+python --version
+```
+
+If you do not see Python 3.13, check which environment is active:
+
+```bash
+conda env list
+```
+
+Then activate the correct environment:
+
+```bash
+conda activate data-analysis-env
+```
+
+Check again:
+
+```bash
+python --version
+```
+
+---
+
+## Problem: VS Code Cannot Find `data-analysis-env`
+
+First activate the environment in Terminal:
+
+```bash
+conda activate data-analysis-env
+```
+
+Then open VS Code from that Terminal:
+
+```bash
+code .
+```
+
+Inside VS Code:
+
+1. Press **Command + Shift + P**.
+2. Select **Python: Select Interpreter**.
+3. Look for `data-analysis-env`.
+
+---
+
+## Problem: My Notebook Says "Select Kernel"
+
+Click **Select Kernel** in the top-right corner of the notebook.
+
+Select the Python environment associated with:
+
+```text
+data-analysis-env
+```
+
+Do not select another Python installation unless your instructor tells you to.
+
+---
+
+## Problem: `EnvironmentNameNotFound`
+
+If you run:
+
+```bash
+conda activate data-analysis-env
+```
+
+and Conda says the environment does not exist, check your environments:
+
+```bash
+conda env list
+```
+
+If `data-analysis-env` is missing, return to the repository folder and run:
+
+```bash
+conda env create -f environment.yaml
+```
+
+---
+
+## Problem: The Environment Already Exists
+
+If Conda tells you:
+
+```text
+prefix already exists
+```
+
+or that `data-analysis-env` already exists, **do not create another copy**.
+
+Check your environments:
+
+```bash
+conda env list
+```
+
+Then try:
+
+```bash
+conda activate data-analysis-env
+```
+
+---
+
+## Problem: Environment Creation Failed
+
+First make sure you are in the repository:
+
+```bash
+pwd
+```
+
+Then check that `environment.yaml` exists:
+
+```bash
+ls
+```
+
+You should see:
+
+```text
+environment.yaml
+```
+
+Try the environment creation command again:
+
+```bash
+conda env create -f environment.yaml
+```
+
+Read the error message carefully if it fails again.
+
+---
+
+# Starting Over
+
+Do not remove your environment unless you actually need to start over.
+
+If instructed to completely rebuild the environment, first deactivate it:
+
+```bash
+conda deactivate
+```
+
+Then remove it:
+
+```bash
+conda env remove -n data-analysis-env
+```
+
+Verify that it is gone:
+
+```bash
+conda env list
+```
+
+Then recreate it from the repository:
+
+```bash
+conda env create -f environment.yaml
+```
+
+Activate it:
+
+```bash
+conda activate data-analysis-env
+```
+
+And verify Python:
+
+```bash
+python --version
+```
+
+You should see:
+
+```text
+Python 3.13.x
+```
+
+---
+
+# Important Reminders
+
+* **Do not install random Python packages globally.**
+* Use the `data-analysis-env` Conda environment for fellowship Python work.
+* Activate your environment before running Python code.
+* Make sure VS Code is using the `data-analysis-env` interpreter.
+* Make sure Jupyter notebooks are using the `data-analysis-env` kernel.
+* Read Terminal error messages before trying random fixes.
+* Do not delete and reinstall your entire environment as your first troubleshooting step.
+* If you are unsure about an error, save or copy the **entire error message** so that you can share it with your instructor.
+
+## Quick Reference
+
+Check Git:
+
+```bash
+git --version
+```
+
+Check Conda:
+
+```bash
+conda --version
+```
+
+Activate your environment:
+
+```bash
+conda activate data-analysis-env
+```
+
+Check Python:
+
+```bash
+python --version
+```
+
+See your Conda environments:
+
+```bash
+conda env list
+```
+
+Open the current folder in VS Code:
+
+```bash
+code .
+```
+
+Deactivate your environment:
+
+```bash
+conda deactivate
+```
+
+---
+
+**You are ready to begin working with Python for data analysis.**
+
