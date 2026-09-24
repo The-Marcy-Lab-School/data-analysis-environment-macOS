@@ -183,6 +183,16 @@ If Conda still cannot be found, return to the Miniconda installation instruction
 
 Cloning creates a copy of a GitHub repository on your computer.
 
+Navigate to your Documents folder:
+
+```bash
+cd Documents
+```
+Make a folder aka directory called `Marcy`:
+```bash
+mkdir Marcy
+```
+
 In Terminal, run:
 
 ```bash
